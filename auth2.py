@@ -196,33 +196,33 @@ def Tele(ccx):
 
 # check_cards_from_file('cct.txt')
 
-def worker(q):
-    while not q.empty():
-        ccx = q.get()
-        result = Tele(ccx)
-        with print_lock:
-            print(f"Card: {ccx.strip()} - Result: {result}")
-            print("-" * 40)
-        q.task_done()
+# def worker(q):
+#     while not q.empty():
+#         ccx = q.get()
+#         result = Tele(ccx)
+#         with print_lock:
+#             print(f"Card: {ccx.strip()} - Result: {result}")
+#             print("-" * 40)
+#         q.task_done()
 
-def check_cards_from_file(file_name, num_threads=10):
-    q = Queue()
+# def check_cards_from_file(file_name, num_threads=10):
+#     q = Queue()
     
-    # Read cards and put them in the queue
-    with open(file_name, 'r') as file:
-        for line in file:
-            q.put(line.strip())
+#     # Read cards and put them in the queue
+#     with open(file_name, 'r') as file:
+#         for line in file:
+#             q.put(line.strip())
     
-    # Create and start threads
-    threads = []
-    for i in range(num_threads):
-        t = Thread(target=worker, args=(q,))
-        t.start()
-        threads.append(t)
+#     # Create and start threads
+#     threads = []
+#     for i in range(num_threads):
+#         t = Thread(target=worker, args=(q,))
+#         t.start()
+#         threads.append(t)
     
-    # Wait for all threads to complete
-    for t in threads:
-        t.join()
+#     # Wait for all threads to complete
+#     for t in threads:
+#         t.join()
 
-if __name__ == "__main__":
-    check_cards_from_file('ccs.txt')
+# if __name__ == "__main__":
+#     check_cards_from_file('ccs.txt')
