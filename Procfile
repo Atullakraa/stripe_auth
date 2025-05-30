@@ -1,1 +1,1 @@
-web: python botauth.py
+web: python mulbotauth.py
