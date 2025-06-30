@@ -17,7 +17,7 @@ stop_flag = False
 
 @bot.message_handler(commands=["start"])
 def start(message):
-    if message.chat.id not in [5980629524, 1762371536]:
+    if message.chat.id not in [5980629524]:
         bot.reply_to(message, "You cannot use the bot to contact developers to purchase a bot subscription @fouroneul")
         return
     bot.reply_to(message, "Send the file now")
@@ -93,7 +93,7 @@ def process_card(message, cc, ko, approved, declined, total):
 def main(message):
     global stop_flag
     
-    if message.chat.id not in [5980629524, 1762371536]:
+    if message.chat.id not in [5980629524]:
         bot.reply_to(message, "You cannot use the bot to contact developers to purchase a bot subscription @fouroneul")
         return
     
